@@ -17,19 +17,8 @@ with open("info/conv_table.json", "r", encoding='utf-8') as f:
 
 @app.route('/api/v1/goods', methods=['GET'])
 def get_goods():
-    data = request.get_json(silent=True)
-    # started_time_local = perf_counter()
-
-    if (not 'query' in data) or (not data['query']):
-        response = jsonify(
-            status='error',
-            error='query not set'
-        )
-        response.status_code = 400
-        return response
-
-    info = find_grouped_info(str(data['query']), cats_list, conv_table)
-
+    query = request.args.get('query')
+    info = find_grouped_info(str(query), cats_list, conv_table)
     return jsonify(
         status='ok',
         info=info
