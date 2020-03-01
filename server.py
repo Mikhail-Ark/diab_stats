@@ -18,7 +18,7 @@ with open("info/conv_table.json", "r", encoding='utf-8') as f:
 @app.route('/api/v1/goods', methods=['GET'])
 def get_goods():
     query = request.args.get('query')
-    if len(query) <= 2:
+    if len(query) < 2:
         info = list()
     else:
         info = find_grouped_info(str(query), cats_list, conv_table)
