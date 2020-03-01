@@ -9,21 +9,23 @@ Response:
     "info":[ // list contains list of list (!!!) - each inner list represents group of goods
         [
             {
-                "price":1175.0,
-                "ship_price":1175.0,
-                "shop_name":"МедМаг",
-                "title":"Глюкометр Сателлит Плюс",
-                "url":"https://www.medmag.ru/index.php?productID=729"
-            },
-            {
-                "price":1350.0,
+                "price":410.0,
                 "ship_price":NaN,
-                "shop_name":"Тест-полоска",
-                "title":"Глюкометр Элта Сателлит Плюс",
-                "url":"http://www.test-poloska.ru/catalog/bloodmeters/eltasatelliteplus.html"
-            },
-            ...
-        ]
+                "shop_name":"Диачек",
+                "title":"Ланцеты Бионайм (Bionime Rightest) GL300 - 50шт",
+                "url":"https://www.diacheck.ru/product/lantsety-bionime-rightest-gl300-50sht"
+            }
+        ],
+        [
+            {
+                "price":450.0,
+                "ship_price":NaN,
+                "shop_name":"Диачек",
+                "title":"Прокалыватель БИОНАЙМ Rightest GD 500 (BIONIME,Швейцария)",
+                "url":"https://www.diacheck.ru/product/prokalyvatel-bionaim-rightest-gd-500-bionimeshveitsariya"
+            }
+        ],
+        ...
     ],
     "status":"ok"}
 ```
