@@ -5,7 +5,7 @@ from collections import Counter
 
 def find_grouped_info(s, words_cat, answers):
     relevant_cats = choose_cats(s, words_cat)
-    answer = [answers[cat] for cat in relevant_cats]
+    answer = [answers[str(cat)] for cat in relevant_cats]
     return answer
 
 

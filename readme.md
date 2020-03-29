@@ -10,26 +10,34 @@ Response:
 
 ``` json
 { // dict, contains "info" and "status"
-    "info":[ // list contains list of list (!!!) - each inner list represents group of goods
-        [
-            {
-                "price":410.0,
-                "ship_price":0.0,
-                "shop_name":"Диачек",
-                "title":"Ланцеты Бионайм (Bionime Rightest) GL300 - 50шт",
-                "url":"https://www.diacheck.ru/product/lantsety-bionime-rightest-gl300-50sht"
-            }
-        ],
-        [
-            {
-                "price":450.0,
-                "ship_price":0.0,
-                "shop_name":"Диачек",
-                "title":"Прокалыватель БИОНАЙМ Rightest GD 500 (BIONIME,Швейцария)",
-                "url":"https://www.diacheck.ru/product/prokalyvatel-bionaim-rightest-gd-500-bionimeshveitsariya"
-            }
-        ],
-        ...
+    "info": [ // list contains list of dicts - each dict represents group of goods
+        {
+            "group_name": "Ланцет Бионайм №50",
+            "items": [
+                {
+                    "price":410.0,
+                    "ship_price":410.0,
+                    "shop_name":"Диачек",
+                    "title":"Ланцеты Бионайм (Bionime Rightest) GL300 - 50шт",
+                    "url":"https://www.diacheck.ru/product/lantsety-bionime-rightest-gl300-50sht"
+                },
+                ...
+            ]
+        },
+        {
+            "group_name": "Прокалыватель Бионайм №50",
+            "items": [
+                {
+                    "price":450.0,
+                    "ship_price":450.0,
+                    "shop_name":"Диачек",
+                    "title":"Прокалыватель БИОНАЙМ Rightest GD 500 (BIONIME,Швейцария)",
+                    "url":"https://www.diacheck.ru/product/prokalyvatel-bionaim-rightest-gd-500-bionimeshveitsariya"
+                },
+            ...
+            ],
+        }
     ],
-    "status":"ok"}
+    "status": "ok"
+}
 ```
