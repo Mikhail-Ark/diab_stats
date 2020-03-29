@@ -2,7 +2,6 @@ import json
 from time import gmtime, strftime, perf_counter
 from flask import Flask, request, jsonify
 
-from info.cats import cats_list
 from libs.fast_forward_pipeline import find_grouped_info
 
 app = Flask(__name__)
@@ -10,6 +9,9 @@ app.config['JSON_AS_ASCII'] = False
 
 started = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 started_time = perf_counter()
+
+with open("info/words_cat.json", "r", encoding='utf-8') as f:
+    words_cat = json.load(f)
 
 with open("info/conv_table.json", "r", encoding='utf-8') as f:
     conv_table = json.load(f)
@@ -21,7 +23,7 @@ def get_goods():
     if len(query) < 2:
         info = list()
     else:
-        info = find_grouped_info(str(query), cats_list, conv_table)
+        info = find_grouped_info(str(query), words_cat, conv_table)
     return jsonify(
         status='ok',
         info=info
