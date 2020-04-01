@@ -1,9 +1,9 @@
 ### Using goods server
 
-`curl "http://84.201.157.17:3010/api/v1/goods?query=your_query"`
+`curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=your_query"`
 
 example:
-`curl "http://84.201.157.17:3010/api/v1/goods?query=bionime"`
+`curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=тест-полоски"`
 
 
 Response:
