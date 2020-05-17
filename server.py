@@ -1,6 +1,8 @@
 import json
 from time import gmtime, strftime, perf_counter
 from flask import Flask, request, jsonify
+import gc
+import pickle
 
 from libs.fast_forward_pipeline import find_grouped_info
 
@@ -10,11 +12,10 @@ app.config['JSON_AS_ASCII'] = False
 started = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 started_time = perf_counter()
 
-with open("info/words_cat.json", "r", encoding='utf-8') as f:
-    words_cat = json.load(f)
-
-with open("info/conv_table.json", "r", encoding='utf-8') as f:
-    conv_table = json.load(f)
+with open("info/goods_cache", "rb") as f:
+    goods_cache = pickle.load(f)
+with open("info/search_cache", "rb") as f:
+    search_cache = json.load(f)
 
 
 @app.route('/api/v1/goods', methods=['GET'])
@@ -23,10 +24,23 @@ def get_goods():
     if len(query) < 2:
         info = list()
     else:
-        info = find_grouped_info(str(query), words_cat, conv_table)
+        info = find_grouped_info(str(query), search_cache, goods_cache)
     return jsonify(
         status='ok',
         info=info
+    )
+
+
+@app.route('/api/v1/update_goods', methods=['GET'])
+def update_goods():
+    global goods_cache, search_cache
+    with open("info/goods_cache", "rb") as f:
+        goods_cache = pickle.load(f)
+    with open("info/search_cache", "rb") as f:
+        search_cache = json.load(f)
+    gc.collect()
+    return jsonify(
+        status='ok',
     )
 
 

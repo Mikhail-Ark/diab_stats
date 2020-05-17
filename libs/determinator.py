@@ -2,11 +2,12 @@ from re import sub
 import pickle
 
 
-def determine_good_id(s):
+def determine_good_id(s, model=None):
     ns = weak_unification(s)
     if not ns:
         return None
-    model = get_model()
+    if model is None:
+        model = get_model()
     return model.get(ns, None)
 
 
@@ -24,6 +25,7 @@ def get_model():
 
 
 def add_good_id_to_raws(raws):
+    model = get_model()
     for i, row in enumerate(raws):
-        raws[i] = row + (determine_good_id(row[0]),)
+        raws[i] = row + (determine_good_id(row[0], model),)
     return raws
