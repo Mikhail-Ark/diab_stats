@@ -109,7 +109,7 @@ def form_search_cache(gcache):
 
 
 def inform_server():
-    requests.get("http://84.201.157.17:3010/api/v1/update_goods")
+    requests.get("http://localhost:3010/api/v1/update_goods")
 
 if __name__ == "__main__":
     print(str(dt.now()))

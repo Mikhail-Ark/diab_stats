@@ -3,8 +3,11 @@ from time import gmtime, strftime, perf_counter
 from flask import Flask, request, jsonify
 import gc
 import pickle
+import sys
 
 from libs.fast_forward_pipeline import find_grouped_info
+
+sys.path.append('.')
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -15,7 +18,7 @@ started_time = perf_counter()
 with open("info/goods_cache", "rb") as f:
     goods_cache = pickle.load(f)
 with open("info/search_cache", "rb") as f:
-    search_cache = json.load(f)
+    search_cache = pickle.load(f)
 
 
 @app.route('/api/v1/goods', methods=['GET'])
