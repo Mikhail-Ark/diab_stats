@@ -50,8 +50,9 @@ def update_goods():
 @app.route('/')
 @app.route('/index')
 def index():
-    diff = round(perf_counter() - started_time, 2)
-    return 'Server started: %s. Operational: %s' % (started, diff)
+    return app.send_static_file('index.html')
+    # diff = round(perf_counter() - started_time, 2)
+    # return 'Server started: %s. Operational: %s' % (started, diff)
 
 
 @app.errorhandler(404)
