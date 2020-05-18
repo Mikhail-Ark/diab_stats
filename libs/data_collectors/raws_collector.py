@@ -26,10 +26,10 @@ def update_db_raws(raws):
     db.insert_raws(raws)
 
 
-def form_raw_dict(r):
+def form_raw_dict(r, shop_name_map):
     rd = {
         "title": r[0],
-        "shop_name": r[1],
+        "shop_name": shop_name_map[r[1]],
         "price": r[2],
         "ship_price": r[3],
         "url": r[4],
@@ -46,6 +46,33 @@ def get_filter_groups_map():
 
 
 def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
+    shop_name_map = {
+        1: "МедМаг",
+        2: "Тест-полоска",
+        3: "ДиаКаталог",
+        4: "Глюкометр",
+        5: "Диабет-контроль",
+        6: "Диачек",
+        7: "Diabetic Shop",
+        8: "Диалайф",
+        9: "Diabet Care",
+        10: "Diabet Med",
+        11: "Diabeta Net",
+        12: "Диа-Пульс",
+        13: "Диабетон",
+        14: "Глюкоза",
+        15: "Бетар Компани",
+        16: "Диатех",
+        17: "Сателлит",
+        18: "Diashop 24",
+        19: "Диабет Сервис",
+        20: "Академия Диабета",
+        21: "Диабет Кабинет",
+        22: "Жизнь с диабетом",
+        23: "Diabet Mag",
+        24: "Диабетика",
+        25: "Диамарка"
+    }
     if fg_map is None:
         fg_map = get_filter_groups_map()
     new_good_id = 100000
@@ -53,7 +80,7 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
     for r in raws:
         if not r[5]:
             continue
-        rd = form_raw_dict(r)
+        rd = form_raw_dict(r, shop_name_map)
         good_id = r[7]
         if good_id not in cache:
             if not good_id or (good_id != good_id):

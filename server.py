@@ -40,7 +40,7 @@ def update_goods():
     with open("info/goods_cache", "rb") as f:
         goods_cache = pickle.load(f)
     with open("info/search_cache", "rb") as f:
-        search_cache = json.load(f)
+        search_cache = pickle.load(f)
     gc.collect()
     return jsonify(
         status='ok',
@@ -48,11 +48,9 @@ def update_goods():
 
 
 @app.route('/')
-@app.route('/index')
-def index():
-    return app.send_static_file('index.html')
-    # diff = round(perf_counter() - started_time, 2)
-    # return 'Server started: %s. Operational: %s' % (started, diff)
+def status():
+    diff = round(perf_counter() - started_time, 2)
+    return 'Server started: %s. Operational: %s' % (started, diff)
 
 
 @app.errorhandler(404)
