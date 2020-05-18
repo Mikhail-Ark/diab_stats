@@ -48,7 +48,8 @@ def update_goods():
 
 
 @app.route('/')
-def status():
+@app.route('/index')
+def index():
     diff = round(perf_counter() - started_time, 2)
     return 'Server started: %s. Operational: %s' % (started, diff)
 
