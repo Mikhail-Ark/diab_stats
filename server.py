@@ -27,7 +27,7 @@ def get_goods():
     query = request.args.get('query', '')
     fgroups = request.args.get('fgroups', None)
     logging.basicConfig(filename='server.log',level=logging.DEBUG)
-    logging.info("q: {query}\nfgr: {fgroups}\n")
+    logging.info(f"\nq: {query}\nfgr: {fgroups}\n")
     if len(query) < 2:
         info = list()
     else:
