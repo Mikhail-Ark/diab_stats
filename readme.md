@@ -1,11 +1,13 @@
 ### Using goods server
 
-`curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=your_query"`
+`curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=your_query&fgroups=n_of_group"`
 
 example:
 `curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=тест-полоски"`
+`curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=тест-полоски&fgroups=1 2"`
 
 
+There can be several n_of_group just put it together splittesd with " "
 Response:
 
 ``` json
@@ -13,12 +15,12 @@ Response:
     "info": [ // list contains list of dicts - each dict represents group of goods
         {
             "group_name": "Ланцет Бионайм №50",
-            "fg_id": 7,
+            "fg_id": 7, //NEW
             "items": [
                 {
                     "price":410.0,
                     "ship_price":410.0,
-                    "shop_name":1,
+                    "shop_name":"Диачек",
                     "title":"Ланцеты Бионайм (Bionime Rightest) GL300 - 50шт",
                     "url":"https://www.diacheck.ru/product/lantsety-bionime-rightest-gl300-50sht"
                 },
@@ -27,12 +29,12 @@ Response:
         },
         {
             "group_name": "Прокалыватель Бионайм №50",
-            "fg_id": 7,
+            "fg_id": 7, //NEW
             "items": [
                 {
                     "price":450.0,
                     "ship_price":450.0,
-                    "shop_name":1,
+                    "shop_name":"Диачек",
                     "title":"Прокалыватель БИОНАЙМ Rightest GD 500 (BIONIME,Швейцария)",
                     "url":"https://www.diacheck.ru/product/prokalyvatel-bionaim-rightest-gd-500-bionimeshveitsariya"
                 },

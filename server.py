@@ -23,11 +23,12 @@ with open("info/search_cache", "rb") as f:
 
 @app.route('/api/v1/goods', methods=['GET'])
 def get_goods():
-    query = request.args.get('query')
+    query = request.args.get('query', '')
+    fgroups = request.args.get('fgroups', None)
     if len(query) < 2:
         info = list()
     else:
-        info = find_grouped_info(str(query), search_cache, goods_cache)
+        info = find_grouped_info(str(query), search_cache, goods_cache, fgroups)
     return jsonify(
         status='ok',
         info=info
