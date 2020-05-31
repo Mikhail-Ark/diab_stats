@@ -1,4 +1,5 @@
 import json
+import logging
 from time import gmtime, strftime, perf_counter
 from flask import Flask, request, jsonify
 import gc
@@ -25,6 +26,8 @@ with open("info/search_cache", "rb") as f:
 def get_goods():
     query = request.args.get('query', '')
     fgroups = request.args.get('fgroups', None)
+    logging.basicConfig(filename='server.log',level=logging.DEBUG)
+    logging.info("q: {query}\nfgr: {fgroups}\n")
     if len(query) < 2:
         info = list()
     else:
