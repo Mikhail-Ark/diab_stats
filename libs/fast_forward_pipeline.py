@@ -45,6 +45,3 @@ def choose_cats(query, scache=None, fgroups=None, gcache=None, min_n=10):
         rel_cats.append(cat)
         min_val = val
     return rel_cats
-
-
-12 18 * * * /home/mikhail_ark/project/diab_stats/libs/data_collectors/raws_collector.py >> /var/log/myjob.log 2>&1
