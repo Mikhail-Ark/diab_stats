@@ -1,7 +1,7 @@
-data/db.db
+data/*.db
 __pycache__/
 *.py[cod]
 diateka.log
 server.log
-goods_cache
-search_cache
+info/goods_cache
+info/search_cache
