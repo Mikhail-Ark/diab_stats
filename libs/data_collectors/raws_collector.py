@@ -75,8 +75,6 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
     }
     if fg_map is None:
         g_map = get_db_info_map()
-    with open("g_map", "wb") as f:
-        pickle.dump(g_map, f)
     new_good_id = 100000
     cache = dict()
     for r in raws:
