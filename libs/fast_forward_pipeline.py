@@ -26,13 +26,15 @@ def choose_cats(query, scache=None, fgroups=None, gcache=None, bdet=None):
     if scache is None:
         with open("info/search_cache", "rb") as f:
             scache = pickle.load(f)
-    if fgroups and (gcache is None):
+    if gcache is None:
         with open("info/goods_cache", "rb") as f:
             gcache = pickle.load(f)
     if bdet is None:
         bdet = BrandDeterminator()
     
     rel_brands, nquery = bdet.pull_brand_set(query)
+    if not nquery:
+        nquery = query
     nquery_grams = grams(nquery)
     c = Counter()
     for gram in nquery_grams:
@@ -51,6 +53,8 @@ def choose_cats(query, scache=None, fgroups=None, gcache=None, bdet=None):
             c.update(list(gcache.keys()))
 
     # filter
+    if rel_brands:
+        rel_brands.add(0)
     to_del = set()
     if fgroups:
         rel_gr = {15} | set(int(x) for x in fgroups.split())
@@ -77,5 +81,5 @@ def choose_cats(query, scache=None, fgroups=None, gcache=None, bdet=None):
         if val <= lower_bound:
             break
         rel_cats.append(cat)
-    rel_cats.sort(key=lambda x: (c[x], len(gcache[x]['group_name'])))
+    rel_cats.sort(key=lambda x: (c[x], -len(gcache[x]['group_name'])), reverse=True)
     return rel_cats

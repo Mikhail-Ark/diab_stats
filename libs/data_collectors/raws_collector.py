@@ -41,7 +41,7 @@ def get_db_info_map():
     db = DataBase()
     with db.create_connection() as conn:
         cur = conn.cursor()
-        res = cur.execute("select g.id, g.title, g.group_id, g.manuf_id, m.name from goods g join manufs m on g.manuf_id = m.id;").fetchall()
+        res = cur.execute("select g.id, g.title, g.group_id, g.manuf_id, m.name from goods g left join manufs m on g.manuf_id = m.id;").fetchall()
     return {r[0]: r[1:] for r in res}
 
 
@@ -75,6 +75,8 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
     }
     if fg_map is None:
         g_map = get_db_info_map()
+    with open("g_map", "wb") as f:
+        pickle.dump(g_map, f)
     new_good_id = 100000
     cache = dict()
     for r in raws:
@@ -86,8 +88,8 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
             if not good_id or (good_id != good_id):
                 good_id = new_good_id
                 new_good_id += 1
-                g_map[good_id] = (r[0], 15)
-            g_info = g_map[good_id]
+                g_map[good_id] = (r[0], 15, 0, '')
+            g_info = g_map.get(good_id, (r[0], 15, 0, ''))
             cache[good_id] = {
                 "group_name": g_info[0],
                 "fg_id": g_info[1],
@@ -118,7 +120,7 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
 
 def grams(s, n=3):
     ns = "".join(re.findall(r"\w", s))[:90].lower()
-    grams = set(x for x in s.split() if len(x) > n)
+    grams = set(x for x in s.lower().split() if len(x) > n)
     if len(ns) < 3:
         return grams
     for i in range(n, len(ns) + 1):
@@ -132,7 +134,7 @@ def form_search_cache(gcache):
     for k, v in gcache.items():
         good_grams = grams(v["group_name"])
         for item in v["items"]:
-            good_grams.update(grams(item['title']))
+            good_grams.update(grams(item['title'].split(" — ")[0]))
         for gram in good_grams:
             scache.setdefault(gram, set()).add(k)
     return scache
