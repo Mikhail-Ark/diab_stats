@@ -900,12 +900,26 @@ class DiaLife(Shop):
                 'https://shop-dia.ru/catalog/plastyri-rocktape-kinezioteyp-design/?count=200',
             ),
             'глюкометр': (
-                'https://shop-dia.ru/catalog/glyukometry/?count=200',
+                'https://shop-dia.ru/catalog/glyukometry/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/glyukometry/?PAGEN_1=2',
             ),
             'еда': (
-                'https://shop-dia.ru/catalog/fitochay/?count=200',
-                'https://shop-dia.ru/catalog/zdorovoe-pitanie/?count=200',
-                'https://shop-dia.ru/catalog/sakharozameniteli/?count=200',
+                'https://shop-dia.ru/catalog/fitochay/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/fitochay/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/zdorovoe-pitanie/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/zdorovoe-pitanie/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/zdorovoe-pitanie/?PAGEN_1=3',
+                'https://shop-dia.ru/catalog/zdorovoe-pitanie/?PAGEN_1=4',
+                'https://shop-dia.ru/catalog/nizkoulgevodnye-produkty/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/nizkoulgevodnye-produkty/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/nizkoulgevodnye-produkty/?PAGEN_1=3',
+                'https://shop-dia.ru/catalog/nizkoulgevodnye-produkty/?PAGEN_1=4',
+                'https://shop-dia.ru/catalog/nizkoulgevodnye-produkty/?PAGEN_1=5',
+                'https://shop-dia.ru/catalog/sakharozameniteli/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/sakharozameniteli/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/sakharozameniteli/?PAGEN_1=3',
+                'https://shop-dia.ru/catalog/sakharozameniteli/?PAGEN_1=4',
+                'https://shop-dia.ru/catalog/sakharozameniteli/?PAGEN_1=5',
             ),
             'ланцет': (
                 'https://shop-dia.ru/catalog/igly-dlya-shprits-ruchek/?count=200',
@@ -913,37 +927,59 @@ class DiaLife(Shop):
             'косметика': (
                 'https://shop-dia.ru/catalog/ukhazhivayushchaya-kosmetika/?count=200',
                 'https://shop-dia.ru/catalog/ukhod-za-polostyu-rta/?count=200',
+                'https://shop-dia.ru/catalog/ukhod-za-kozhey/?PAGEN_1=1'
+                'https://shop-dia.ru/catalog/ukhod-za-kozhey/?PAGEN_1=2'
+                'https://shop-dia.ru/catalog/ukhod-za-kozhey/?PAGEN_1=3'
+                'https://shop-dia.ru/catalog/ukhod-za-kozhey/?PAGEN_1=4'
             ),
             'литература': (
                 'https://shop-dia.ru/catalog/knigi-o-diabete/',
             ),
             'полоска': (
-                'https://shop-dia.ru/catalog/test-poloski/?count=200',
+                'https://shop-dia.ru/catalog/test-poloski/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/test-poloski/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/test-poloski/?PAGEN_1=3',
                 'https://shop-dia.ru/catalog/vizualnye-test-poloski/?count=200',
             ),
             'помпа': (
                 'https://shop-dia.ru/catalog/insulinovye-pompy/?count=200',
-                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-akku-chek/?count=200',
-                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-medtronik/?count=200',
-                'https://shop-dia.ru/catalog/aksessuary-k-akku-chek/?count=200',
-                'https://shop-dia.ru/catalog/aksessuary-k-medtronik/?count=200',
+                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-akku-chek/PAGEN_1=1',
+                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-akku-chek/PAGEN_1=2',
+                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-akku-chek/PAGEN_1=3',
+                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-medtronik/PAGEN_1=1',
+                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-medtronik/PAGEN_1=2',
+                'https://shop-dia.ru/catalog/raskhodnye-materialy-k-medtronik/PAGEN_1=3',
+                'https://shop-dia.ru/catalog/aksessuary-k-akku-chek/PAGEN_1=1',
+                'https://shop-dia.ru/catalog/aksessuary-k-akku-chek/PAGEN_1=2',
+                'https://shop-dia.ru/catalog/aksessuary-k-akku-chek/PAGEN_1=3',
+                'https://shop-dia.ru/catalog/aksessuary-k-medtronik/PAGEN_1=1',
+                'https://shop-dia.ru/catalog/aksessuary-k-medtronik/PAGEN_1=2',
+                'https://shop-dia.ru/catalog/aksessuary-k-medtronik/PAGEN_1=3',
+                'https://shop-dia.ru/catalog/aksessuary-k-medtronik/PAGEN_1=4',
+                'https://shop-dia.ru/catalog/aksessuary-k-medtronik/PAGEN_1=5',
             ),
             'разное': (
                 'https://shop-dia.ru/catalog/aktsii-i-skidki/?count=200',
                 'https://shop-dia.ru/catalog/dieticheskie-vesy/?count=200',
-                'https://shop-dia.ru/catalog/sredstva-ot-gipoglikemii/?count=200',
+                'https://shop-dia.ru/catalog/sredstva-ot-gipoglikemii/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/sredstva-ot-gipoglikemii/?PAGEN_1=2',
                 'https://shop-dia.ru/catalog/prochie-tovary/?count=200',
                 'https://shop-dia.ru/catalog/ukhod-za-kozhey/?count=200',
                 'https://shop-dia.ru/catalog/nakleyki/?count=200',
             ),
             'ручка': (
-                'https://shop-dia.ru/catalog/shprits-ruchki/?count=200',
+                'https://shop-dia.ru/catalog/shprits-ruchki/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/shprits-ruchki/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/shprits-ruchki/?PAGEN_1=3',
+                'https://shop-dia.ru/catalog/shprits-ruchki/?PAGEN_1=4',
             ),
             'тонометр': (
                 'https://shop-dia.ru/catalog/tonometry/?count=200',
             ),
             'чехол': (
-                'https://shop-dia.ru/catalog/chekhly-dlya-shprits-ruchek/?count=200',
+                'https://shop-dia.ru/catalog/chekhly-dlya-shprits-ruchek/?PAGEN_1=1',
+                'https://shop-dia.ru/catalog/chekhly-dlya-shprits-ruchek/?PAGEN_1=2',
+                'https://shop-dia.ru/catalog/chekhly-dlya-shprits-ruchek/?PAGEN_1=3',
             ),
             'мониторинг': (
                 'https://shop-dia.ru/catalog/sistemy-monitorirovaniya/?count=200',
@@ -952,23 +988,29 @@ class DiaLife(Shop):
 
 
     def det_blocks(self, soup):
-        return soup.find_all("div", {"class": "listing"})
+        return soup.find_all("div", {"class": "catalog-item-info"})
     
     def parse_block(self, block):
         res = dict()
-        cb = block.find("div", {"class": "contm"})
-        res['title'] = cb.find("h3").text.strip()
-        res['url'] = "https://shop-dia.ru" + cb.find("a").attrs["href"]
-        price_b = cb.find("span", {"class": "num"})
-        if price_b:
-            price_s = cb.find("span", {"class": "num"}).text
+        cb = block.find("a", {"class": "item-title"})
+        res['title'] = cb.attrs["title"].strip()
+        res['url'] = "https://shop-dia.ru" + cb.attrs["href"]
+        
+        pb = block.find("span", {"class": "catalog-item-price"})
+        if pb:
+            price_s = next(pb.children).strip()
             res['orig_price'] = price_s
+        if pb:
             res['price'] = self.price_str_to_float(price_s)
+            if res['price']:
+                res['available'] = True
+            else:
+                res['available'] = False
         else:
             res['available'] = False
-        desc = cb.find("div", {"class": "p"})
+        desc = block.find("div", {"class": "item-desc"})
         if desc:
-            res['description'] = desc.text.strip()
+            res['description'] = desc.get_text().strip()
         return res
 
 
@@ -2074,24 +2116,24 @@ class Diacadem(Shop):
         self.shop_id = 20
         self.page_list = {    
             'бинт': (
-                'https://diacadem.com/catalog/plastyri_i_dezinfektsiya/',
+                'https://diacadem.com/catalog/plastyri_i_dezinfektsiya/?perpage=all',
             ),
             'глюкометр': (
-                'https://diacadem.com/catalog/glyukometry/',
+                'https://diacadem.com/catalog/glyukometry/?perpage=all',
             ),
             'еда': (
-                'https://diacadem.com/catalog/zdorovoe_pitanie/',
-                'https://diacadem.com/catalog/zameniteli_sakhara/',
-                'https://diacadem.com/catalog/ledentsy_zhivichnye_s_propolisom/',
+                'https://diacadem.com/catalog/zdorovoe_pitanie/?perpage=all',
+                'https://diacadem.com/catalog/zameniteli_sakhara/?perpage=all',
+                'https://diacadem.com/catalog/ledentsy_zhivichnye_s_propolisom/?perpage=all',
             ),
             'ланцет': (
-                'https://diacadem.com/catalog/lantsety_i_prokalyvateli_/',
+                'https://diacadem.com/catalog/lantsety_i_prokalyvateli_/?perpage=all',
             ),
             'косметика': (
-                'https://diacadem.com/catalog/kosmeticheskie_sredstva/',
+                'https://diacadem.com/catalog/kosmeticheskie_sredstva/?perpage=all',
             ),
             'литература': (
-                'https://diacadem.com/catalog/spetsializirovannaya_literatura/',
+                'https://diacadem.com/catalog/spetsializirovannaya_literatura/?perpage=all',
             ),
             'мониторинг': (
                 'https://diacadem.com/catalog/monitoring_glyukozy/',
@@ -2111,37 +2153,35 @@ class Diacadem(Shop):
                 'https://diacadem.com/catalog/masla/',
                 'https://diacadem.com/catalog/medtekhnika/',
                 'https://diacadem.com/catalog/raznoe/',
-                'https://diacadem.com/catalog/probiotiki/',
+                'https://diacadem.com/catalog/probiotiki/?perpage=all',
             ),
             'ручка': (
-                'https://diacadem.com/catalog/shprits_ruchki_i_igly/',
+                'https://diacadem.com/catalog/shprits_ruchki_i_igly/?perpage=all',
             ),
             'чехол': (
-                'https://diacadem.com/catalog/myabetic_/',
-                'https://diacadem.com/catalog/termosumki_i_chekhly/',
+                'https://diacadem.com/catalog/myabetic_/?perpage=all',
+                'https://diacadem.com/catalog/termosumki_i_chekhly/?perpage=all',
             ),
         }
 
 
     def det_blocks(self, soup):
-        blocks = soup.find_all("div", {"class": "catalog-item-info"})
-        pagination = soup.find("li", {"class": "last"})
-        if pagination:
-            nurl = 'https://diacadem.com' + pagination.a.attrs['href']
-            blocks += self.det_blocks(get_soup(nurl))
+        blocks = soup.find_all("div", {"class": "card-product__inner"})
         return blocks
 
 
     def parse_block(self, block):
         res = dict()
-        bname = block.find("a", {"class": "item-title"})
+        bname = block.find("div", {"class": "card-product__title"}).a
         res['title'] = bname.text.strip()
         res['url'] = 'https://diacadem.com' + bname.attrs['href']
-        try:
-            price_s = list(block.find("span", {"class": "catalog-item-price"}).children)[0].strip()
+        price_s = block.find("span", {"class": "price"})
+        if price_s:
+            price_s = price_s.text
             res['orig_price'] = price_s
             res['price'] = self.price_str_to_float(price_s)
-        except:
+            res['available'] = True
+        else:
             res['available'] = False
         return res
         
