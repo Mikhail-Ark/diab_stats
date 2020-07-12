@@ -37,11 +37,11 @@ def form_raw_dict(r, shop_name_map):
     return rd
 
 
-def get_filter_groups_map():
+def get_db_info_map():
     db = DataBase()
     with db.create_connection() as conn:
         cur = conn.cursor()
-        res = cur.execute("SELECT id, title, group_id from goods;").fetchall()
+        res = cur.execute("select g.id, g.title, g.group_id, g.manuf_id, m.name from goods g join manufs m on g.manuf_id = m.id;").fetchall()
     return {r[0]: r[1:] for r in res}
 
 
@@ -74,7 +74,7 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
         25: "Диамарка"
     }
     if fg_map is None:
-        fg_map = get_filter_groups_map()
+        g_map = get_db_info_map()
     new_good_id = 100000
     cache = dict()
     for r in raws:
@@ -86,10 +86,13 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
             if not good_id or (good_id != good_id):
                 good_id = new_good_id
                 new_good_id += 1
-                fg_map[good_id] = (r[0], 15)
+                g_map[good_id] = (r[0], 15)
+            g_info = g_map[good_id]
             cache[good_id] = {
-                "group_name": fg_map[good_id][0],
-                "fg_id": fg_map[good_id][1],
+                "group_name": g_info[0],
+                "fg_id": g_info[1],
+                "b_id": g_info[2],
+                "b_name": g_info[3],
                 "items": list()
             }
         cache[good_id]["items"].append(rd)
@@ -115,7 +118,7 @@ def form_goods_cache(raws, fg_map=None, manual=True, search_cache=False):
 
 def grams(s, n=3):
     ns = "".join(re.findall(r"\w", s))[:90].lower()
-    grams = set()
+    grams = set(x for x in s.split() if len(x) > n)
     if len(ns) < 3:
         return grams
     for i in range(n, len(ns) + 1):

@@ -15,7 +15,7 @@ Response:
     "info": [ // list contains list of dicts - each dict represents group of goods
         {
             "group_name": "Ланцет Бионайм №50",
-            "fg_id": 7, //NEW
+            "fg_id": 7,
             "items": [
                 {
                     "price":410.0,
@@ -29,7 +29,7 @@ Response:
         },
         {
             "group_name": "Прокалыватель Бионайм №50",
-            "fg_id": 7, //NEW
+            "fg_id": 7,
             "items": [
                 {
                     "price":450.0,
@@ -42,6 +42,7 @@ Response:
             ],
         }
     ],
+    "fg_list": [7,15], //NEW
     "status": "ok"
 }
 ```

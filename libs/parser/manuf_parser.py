@@ -23,7 +23,7 @@ class BrandDeterminator(object):
             ns = " ".join(x for i, x in enumerate(words) if i not in used)
         ur_len = len(ns)
         for reg in self.regs:
-            res = reg.sub("", ns)
+            res = reg.sub("", ns).strip()
             if len(res) < ur_len:
                 brand_set.add(self.regs[reg])
                 ns = res

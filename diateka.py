@@ -7,6 +7,7 @@ import pickle
 import sys
 
 from libs.fast_forward_pipeline import find_grouped_info
+from libs.parser.manuf_parser import BrandDeterminator
 
 sys.path.append('.')
 
@@ -20,7 +21,7 @@ with open("info/goods_cache", "rb") as f:
     goods_cache = pickle.load(f)
 with open("info/search_cache", "rb") as f:
     search_cache = pickle.load(f)
-
+bdet = BrandDeterminator()
 
 @app.route('/api/v1/goods', methods=['GET'])
 def get_goods():
@@ -31,10 +32,11 @@ def get_goods():
     if len(query) < 2:
         info = list()
     else:
-        info = find_grouped_info(str(query), search_cache, goods_cache, fgroups)
+        info, fg_list = find_grouped_info(str(query), search_cache, goods_cache, fgroups, bdet)
     return jsonify(
         status='ok',
-        info=info
+        info=info,
+        fg_list=fg_list
     )
 
 
