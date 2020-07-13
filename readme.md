@@ -16,6 +16,8 @@ Response:
         {
             "group_name": "Ланцет Бионайм №50",
             "fg_id": 7,
+            "b_id": 37, //NEW
+            "b_name": "Bionime", //NEW
             "items": [
                 {
                     "price":410.0,
@@ -30,6 +32,8 @@ Response:
         {
             "group_name": "Прокалыватель Бионайм №50",
             "fg_id": 7,
+            "b_id": 37, //NEW
+            "b_name": "Bionime", //NEW
             "items": [
                 {
                     "price":450.0,
