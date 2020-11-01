@@ -2049,7 +2049,7 @@ class DiaShop24(Shop):
 
     def parse_block(self, block):
         res = dict()
-        bname = block.find("p", {"class": "name product-title"})
+        bname = block.find("p", {"class": "name"})
         res['title'] = bname.text
         res['url'] = bname.a.attrs['href']
         price_s = block.ins

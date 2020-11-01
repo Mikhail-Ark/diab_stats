@@ -15,9 +15,12 @@ def collect_info(shops_list):
     all_raws = list()
     for i, shop in enumerate(shops_list):
         print(i + 1, shop.shop_name, end='\t', sep='\t')
-        raws = shop.get_goods(raw_format=True)
-        print(len(raws))
-        all_raws.extend(raws)
+        try:
+            raws = shop.get_goods(raw_format=True)
+            print(len(raws))
+            all_raws.extend(raws)
+        except:
+            print(0)
     return all_raws
 
 
