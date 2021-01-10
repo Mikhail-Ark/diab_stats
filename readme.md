@@ -1,21 +1,33 @@
-### Using goods server
+### General
+
+The website collects information about prices of diabetic goods in order to help people to find the most profitable offers.
+Example (working in Jan 2021):
+
+`https://diateka.info/results?query=глюкометр+сателит`
+
+Here in this repository is a crawler and search API.
+
+
+### Using API
 
 `curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=your_query&fgroups=n_of_group"`
 
-example:
+Examples:
+
 `curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=тест-полоски"`
+
 `curl -G "http://84.201.157.17:3010/api/v1/goods" --data-urlencode "query=тест-полоски&fgroups=1 2"`
 
 
 There can be several n_of_group just put it together splittesd with " "
 Response:
 
-``` json
-{ // dict, contains "info" and "status"
-    "info": [ // list contains list of dicts - each dict represents group of goods
+```json
+{
+    "info": [
         {
             "group_name": "Ланцет Бионайм №50",
-            "fg_id": 7, //NEW
+            "fg_id": 7,
             "items": [
                 {
                     "price":410.0,
@@ -29,7 +41,7 @@ Response:
         },
         {
             "group_name": "Прокалыватель Бионайм №50",
-            "fg_id": 7, //NEW
+            "fg_id": 7,
             "items": [
                 {
                     "price":450.0,
@@ -47,7 +59,7 @@ Response:
 ```
 
 Current list of shops:
-{
+```{
     1: "МедМаг",
     2: "Тест-полоска",
     3: "ДиаКаталог",
@@ -73,10 +85,10 @@ Current list of shops:
     23: "Diabet Mag",
     24: "Диабетика",
     25: "Диамарка"
-}
+}```
 
 Current list of groups (fg_id):
-{
+```{
     1: "Глюкометры",
     2: "Тест-полоски",
     3: "Инсулиновые помпы",
@@ -92,4 +104,4 @@ Current list of groups (fg_id):
     13: "Пластыри и дизинфекция",
     14: "Питание",
     15: "Товары для здоровья"
-}
+}```
